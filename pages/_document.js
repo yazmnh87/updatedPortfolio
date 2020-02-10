@@ -26,10 +26,12 @@ static async getInitialProps(ctx){
     }
 }
 
-render(){
+render(props){
     return (
         <Html>
-            <Head />
+            <Head>
+                <link rel="stylesheet" href="spinkit.min.css"/>
+            </Head>
             <body style={{margin: 0}}>
                 <Main />
                 <NextScript />

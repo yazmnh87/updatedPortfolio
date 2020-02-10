@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
+import ReactInterval from 'react-interval';
 
 const Container = styled.div`
 display: flex;
@@ -21,10 +22,15 @@ background-color: ${props=> props.theme.colors.gray};
 `
 
 export const HeaderSection = props => {
-const adjs = ['Driven', 'attentive', 'organized', 'radiant', 'curious', 'insipred', 'unity', 'imperfect', 'dedicated', 'innovative', 'balanced', 'communicating','action', 'aware', 'accomplishing', 'wise', 'human', 'mindful', 'intelligent', 'reflecting', 'endurance', 'integrity', 'spirit', 'abundance', 'life force', 'pure', 'questioning', 'answering', 'vibration', 'Developer']
-let currentIndex = 0
+const adjs = ['Driven', 'attentive', 'organized', 'radiant', 'curious', 'insipred', 'unity', 'imperfect', 'dedicated', 'innovative', 'balanced', 'communicating','action', 'aware', 'accomplishing', 'wise', 'human', 'mindful', 'intelligent', 'reflecting', 'endurance', 'integrity', 'spirit', 'abundance', 'life force', 'questioning', 'answering', 'vibration', 'a Developer']
+const[state, setState] = useState({
+    currentIndex: 0
+})
 
 const updateAdj = () => {
+    if(state.currentIndex !== adjs.length -1){
+        setState({...state, currentIndex: state.currentIndex +1})
+    }
 }
 
  useEffect(()=>{
@@ -35,7 +41,9 @@ const updateAdj = () => {
     return(
         <Container>
             <div className="adjContainer">
-                <h1>I am</h1>
+                <h1>I am {adjs[state.currentIndex]}</h1>
+                <ReactInterval timeout={5000} enabled={true}
+                    callback={() => updateAdj()} />
             </div>
 
         </Container>
