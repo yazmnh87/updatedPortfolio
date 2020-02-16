@@ -51,6 +51,12 @@ display: flex;
 flex-direction: column;
 align-items:center;
 border: 1px solid lime;
+
+.timeText{
+    font-family: ${props=> props.theme.fonts.primary};
+    color: ${props=> props.theme.colors.secondary};
+    font-weight: 600;
+}
 `
 
 export const MainContainer = props => {
@@ -72,7 +78,7 @@ if(data.data){
 }
 }
 const mappedTime = state.languages.length !== 0 ? state.languages.map((language,i) => {
-    return <LanguageItem language={language}/>
+    return <LanguageItem key={i} language={language}/>
 }) : null
     return(
         <Container>
@@ -89,7 +95,7 @@ const mappedTime = state.languages.length !== 0 ? state.languages.map((language,
                 </div>
                 </Title>
                 <Stats>
-                    <span>Total Time: {state.totalTime}</span>
+                    <span className="timeText">Total Time: {state.totalTime}</span>
                             {mappedTime}
                 </Stats>
             </SideBar>
