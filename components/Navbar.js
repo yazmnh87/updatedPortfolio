@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons'
 
@@ -28,16 +30,26 @@ img{
 
 ul{
 display: flex;
-flex-direction: row;
+justify-content: space-evenly;
+width: 300px;
 list-style: none;
-border: 1px solid lime;
+/* border: 1px solid orange; */
 }
 
-ul li{
-    color: #fff;
-    font-family: ${props=> props.theme.fonts.primary};
-    border: 1px solid lime;
+.link{
+color:#fff;
+text-decoration: none;
+font-family: ${props=> props.theme.fonts.primary};
+font-size: 18px;
 }
+
+.activeLink{
+color:${props=> props.theme.colors.secondary};
+text-decoration: none;
+font-family: ${props=> props.theme.fonts.primary};
+font-size: 18px;
+}
+
 
 .workLinks{
     display: flex;
@@ -58,14 +70,15 @@ ul li{
 `
 
 export const Navbar = props => {
+    const router = useRouter()
     return(
         <NavContainer>
             <img src={'/personal_logo_free.png'}/>
             <ul>
-                <li><a>Home</a></li>
-                <li><a>Contact</a></li>
-                <li><a>Skills</a></li>
-                <li><a>Job History</a></li>
+                <li><Link href="/"><a className={router.pathname === "/" ? "activeLink" : "link"}>Home</a></Link></li>
+                <li><Link href="/contact"><a className={router.pathname === "/contact" ? "activeLink" : "link"}>Contact</a></Link></li>
+                {/* <li><Link>Skills</Link></li> */}
+                {/* <li><Link>Job History</Link></li> */}
             </ul>
             <div className="workLinks">
             <a href="https://github.com/yazmnh87"><FontAwesomeIcon className="icon" icon={faGithub}/></a>

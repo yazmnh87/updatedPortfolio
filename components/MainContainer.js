@@ -13,13 +13,26 @@ border: 1px solid blue;
 
 const SideBar = styled.div`
 height: 100%;
-border: 1px solid purple;
+border: 1px solid ${props=> props.theme.colors.primary};
 `
 
 const HorizontalCarousel = styled.div`
+display: grid;
+grid-template-columns: 1fr 1fr;
 height: 100%;
-border: 1px solid black;
+border: 1px solid pink;
 `
+const WebApps = styled.div`
+height: 50%;
+border:1px solid green;
+`
+
+const MobileApps = styled.div`
+height: 50%;
+border:1px solid blue;
+`
+
+
 const Title = styled.div`
 display: flex;
 flex-direction: column;
@@ -49,14 +62,20 @@ padding: 10px 0 0 0;
 const Stats = styled.div`
 display: flex;
 flex-direction: column;
-align-items:center;
-border: 1px solid lime;
-
+/* border: 1px solid lime; */
+margin: 10px 0 0 0;
 .timeText{
     font-family: ${props=> props.theme.fonts.primary};
     color: ${props=> props.theme.colors.secondary};
     font-weight: 600;
+    margin: auto;
 }
+`
+
+const MappedTime = styled.div`
+display: flex;
+flex-direction: column;
+margin: 10px 0 0 0;
 `
 
 export const MainContainer = props => {
@@ -96,13 +115,45 @@ const mappedTime = state.languages.length !== 0 ? state.languages.map((language,
                 </Title>
                 <Stats>
                     <span className="timeText">Total Time: {state.totalTime}</span>
-                            {mappedTime}
+                    <MappedTime>
+                            {state.loading?
+                            <div className="sk-circle sk-center">
+                            <div className="sk-circle-dot"></div>
+                            <div className="sk-circle-dot"></div>
+                            <div className="sk-circle-dot"></div>
+                            <div className="sk-circle-dot"></div>
+                            <div className="sk-circle-dot"></div>
+                            <div className="sk-circle-dot"></div>
+                            <div className="sk-circle-dot"></div>
+                            <div className="sk-circle-dot"></div>
+                            <div className="sk-circle-dot"></div>
+                            <div className="sk-circle-dot"></div>
+                            <div className="sk-circle-dot"></div>
+                            <div className="sk-circle-dot"></div>
+                          </div>
+                          :
+                            mappedTime}
+                    </MappedTime>
                 </Stats>
             </SideBar>
             <HorizontalCarousel>
+                <WebApps>
+                        <div>
+                            <div>
 
+                            </div>
+                            <div>
+                                <img src={'git_logo.png'}/>
+                            </div>
+                            <div>
+
+                            </div>
+                        </div>
+                </WebApps>
+                <MobileApps>
+
+                </MobileApps>
             </HorizontalCarousel>
-
         </Container>
     )
 }
