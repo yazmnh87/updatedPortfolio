@@ -4,6 +4,10 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons'
+import {BreakpointMobile, BreakpointDesktop, BreakpointLargeDevices, BreakpointTablet, BreakpointSmallMobile } from '../pages/GlobalStyle'
+// @media only screen and (max-width: ${BreakpointLargeDevices + 'px'}) {
+// }
+
 
 const NavContainer = styled.div`
 display: flex;
@@ -57,6 +61,13 @@ font-size: 18px;
     justify-content:space-evenly;
     padding-right: 10px;
     border: 1px solid lime;
+
+    @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
+        padding-right: 0px;  
+        width: 120px;
+ }
+
+
 }
 
 .icon{
@@ -73,11 +84,11 @@ export const Navbar = props => {
     const router = useRouter()
     return(
         <NavContainer>
-            <img src={'/personal_logo_free.png'}/>
+            <img src={'/personal_logo.png'}/>
             <ul>
                 <li><Link href="/"><a className={router.pathname === "/" ? "activeLink" : "link"}>Home</a></Link></li>
                 <li><Link href="/contact"><a className={router.pathname === "/contact" ? "activeLink" : "link"}>Contact</a></Link></li>
-                {/* <li><Link>Skills</Link></li> */}
+                {/* <li><Link>My Photos</Link></li> */}
                 {/* <li><Link>Job History</Link></li> */}
             </ul>
             <div className="workLinks">

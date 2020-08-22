@@ -13,12 +13,6 @@ width: 100%;
 img{
     margin-left: 15px;
 }
-
-span{
-    font-Size: 14px;
-    font-family: ${props=> props.theme.fonts.primary};
-    color: ${props=> props.theme.colors.secondary};
-}
 `
 
 const TextContainer = styled.div`
@@ -29,6 +23,18 @@ align-items: center;
 justify-content: space-evenly;
 margin-right:15px;
 border: 1px solid blue;
+`
+
+const StyledName = styled.span`
+font-Size: 14px;
+font-family: ${props=> props.theme.fonts.primary};
+color: ${props=> props.theme.colors.secondary};
+`
+
+const StyledTime = styled.span`
+font-Size: 14px;
+font-family: ${props=> props.theme.fonts.primary};
+color: ${props=> props.theme.colors.secondary};
 `
 
 
@@ -52,6 +58,8 @@ const renderLogo = language => {
             return <img height={30} width={30} src={'typescript_logo.png'}/>
         case 'Kotlin':
             return <img height={30} width={30} src={'kotlin_logo.png'}/>
+        case 'CSS':
+            return <img height={30} width={30} src={'css3_logo.png'}/>
         }
 }
 
@@ -61,10 +69,10 @@ export const LanguageItem = ({language}) => {
             <Container>
                 {renderLogo(language.name)}
                 <TextContainer>
-                <span>{language.name}</span>
+                <StyledName>{language.name}</StyledName>
                 {language.hours !== 0 ?
-                <span>{language.hours}hrs</span> : null}
-                <span>{language.minutes}mins</span>
+                <StyledTime>{language.hours}{" "}hrs</StyledTime> : null}
+                <StyledTime>{language.minutes}{" "}mins</StyledTime>
                 </TextContainer>
             </Container>
     )
