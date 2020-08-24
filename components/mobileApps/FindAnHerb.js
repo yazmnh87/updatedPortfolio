@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import img1 from '../../public/gitHubjobs_screenshot.png'
+import wild5Login from '../../public/wild5_login_new.png'
 import reactLogo from '../../public/react_logo.png'
 
 const Container = styled.div`
@@ -18,7 +18,7 @@ border:1px solid red;
 `
 
 const StyledImg = styled.img`
-height: 100px;
+height: 150px;
 padding: 10px;
 border:1px solid red;
 `
@@ -46,16 +46,15 @@ left: 20px;
 height: 50px;
 `
 
-export const GitHubJobsApp = props => {
+export const FindAnHerbApp = (props) => {
     return (
         <Container>
             <Wrapper>
-
-            <StyledImg src={img1}/>
-            <Title>GitHub Jobs</Title>
+                <StyledImg src={wild5Login}/>
+                <Title>Find An Herb</Title>
             </Wrapper>
             <DescriptionContainer>
-                <DescriptionText>Github jobs lists jobs from Github's API, I implemented pagination of results and a custom search query. Uses React, axios, and bootstrap, view site here 
+                <DescriptionText>CryptoCurrency Dashboard is a realtime dashboard with prices for Bitcoin, Ethereum, Ripple, Litecoin and EOS. Uses React and axios, view site here 
 
                 </DescriptionText>
                 <StyledLogo src={reactLogo}/>

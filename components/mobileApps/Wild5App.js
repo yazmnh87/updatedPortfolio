@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import Link from 'next/link'
-import img1 from '../../public/crypto_currency_screenshot.png'
+import wild5Login from '../../public/wild5_login_new.png'
 import reactLogo from '../../public/react_logo.png'
+import firebaseLogo from '../../public/firebase_logo.png'
 
 const Container = styled.div`
 /* height:100%;
@@ -19,7 +19,7 @@ grid-template-columns: 40% 60%;
 `
 
 const StyledImg = styled.img`
-height: 100px;
+height: 150px;
 padding: 10px;
 /* border:1px solid red; */
 `
@@ -40,12 +40,12 @@ const DescriptionText = styled.p`
 font-size: 20px;
 /* border:1px solid red; */
 
-.linkToSite{
-    text-decoration:underline;
-    color:  ${props=> props.theme.colors.secondary};
+.googlePlayLink{
+text-decoration: underline;
+color: ${props=> props.theme.colors.secondary}; 
 }
 
-.linkToSite:hover{
+.googlePlayLink:hover{
     cursor: pointer;
 }
 
@@ -55,30 +55,28 @@ const LogoContainer = styled.div`
 display: flex;
 height: 50px;
 width:100%;
-border:1px solid red;
+/* border:1px solid red; */
 `
 
 const StyledLogo = styled.img`
 /* position:absolute; */
-bottom:0;
-left: 20px;
 height: 50px;
 `
 
-export const CryptoWebApp = props => {
+export const Wild5App = (props) => {
     return (
         <Container>
             <Wrapper>
-
-            <StyledImg src={img1}/>
-            <Title>CryptoCurrency Dashboard</Title>
+                <StyledImg src={wild5Login}/>
+                <Title>Wild5 Wellness IOS & Android App</Title>
             </Wrapper>
             <DescriptionContainer>
-                <DescriptionText>CryptoCurrency Dashboard is a realtime dashboard with prices for Bitcoin, Ethereum, Ripple, Litecoin and EOS. Uses React and axios, view site here <a href="http://crypto-dash.surge.sh/" className="linkToSite">CryptoDashboard</a> 
-
+                <DescriptionText>Wild 5 Wellness Kickstart 30 app is a full stack React Native app available on both IOS and android. The app is a compliment tool to the book to assist readers to be able to track their progress more easily. Check out the <a href="https://play.google.com/store/apps/details?id=com.wild5wellness.kickstart30" className="googlePlayLink">App</a>
+    {" "}and also take a look at the <a href="https://www.amazon.com/WILD-Wellness-KickStart30-Proven-Program/dp/1791658806" className="googlePlayLink">Book</a>.
                 </DescriptionText>
                 <LogoContainer>
                 <StyledLogo src={reactLogo}/>
+                <StyledLogo src={firebaseLogo}/>
                 </LogoContainer>
             </DescriptionContainer>
         </Container>

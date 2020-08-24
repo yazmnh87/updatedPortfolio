@@ -22,17 +22,17 @@ width: 65%;
 align-items: center;
 justify-content: space-evenly;
 margin-right:15px;
-border: 1px solid blue;
+/* border: 1px solid blue; */
 `
 
 const StyledName = styled.span`
-font-Size: 14px;
+font-Size: ${props=> props.stringLen <= 12 ? 14 + 'px' : 12 + 'px'};
 font-family: ${props=> props.theme.fonts.primary};
 color: ${props=> props.theme.colors.secondary};
 `
 
 const StyledTime = styled.span`
-font-Size: 14px;
+font-Size: ${props=> props.stringLen <= 12 ? 14 + 'px' : 12 + 'px'};
 font-family: ${props=> props.theme.fonts.primary};
 color: ${props=> props.theme.colors.secondary};
 `
@@ -41,7 +41,7 @@ color: ${props=> props.theme.colors.secondary};
 const renderLogo = language => {
     switch(language){
         case 'JavaScript':
-            return <img height={30} width={30} src={'javascript_logo.png'}/>
+            return <img height={30} width={30} src={'js_logo.png'}/>
         case 'JSON':
             return <img height={30} width={30} src={'json_logo.png'}/>
         case 'Git Config':
@@ -65,14 +65,16 @@ const renderLogo = language => {
 
 
 export const LanguageItem = ({language}) => {
+    console.log( "length",language.name.length + String(language.hours).length + String(language.minutes).length)
+    const stringLen = language.name.length + String(language.hours).length + String(language.minutes).length
     return (
             <Container>
                 {renderLogo(language.name)}
                 <TextContainer>
-                <StyledName>{language.name}</StyledName>
+                <StyledName stringLen={stringLen}>{language.name}</StyledName>
                 {language.hours !== 0 ?
-                <StyledTime>{language.hours}{" "}hrs</StyledTime> : null}
-                <StyledTime>{language.minutes}{" "}mins</StyledTime>
+                <StyledTime stringLen={stringLen}>{language.hours}{" "}hr</StyledTime> : null}
+                <StyledTime stringLen={stringLen}>{language.minutes}{" "}mins</StyledTime>
                 </TextContainer>
             </Container>
     )

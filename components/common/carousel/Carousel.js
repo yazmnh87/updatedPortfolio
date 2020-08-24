@@ -12,7 +12,7 @@ max-height: 100%;
 width: 100%;
 overflow-x: hidden;
 position: relative;
-border:1px solid lime;
+/* border:1px solid lime; */
 &:hover{
     .arrow{
         display: block;
@@ -64,13 +64,14 @@ overflow-x: hidden;
 }
 #arrow-left{
     border-width: 20px 30px 20px 0;
-    border-color: transparent black transparent transparent;
+    border-color: ${props => 'transparent' + " " + props.theme.colors.secondary + " " +'transparent'+ " " + 'transparent'};
     left: 0;
     margin-left: 30px;
+    z-index: 99;
 }
 #arrow-right{
     border-width: 20px 0px 20px 30px;
-    border-color: transparent transparent transparent black;
+    border-color: ${props => 'transparent' + " " + 'transparent'+ " " +'transparent'+ " " + props.theme.colors.secondary};
     right: 0;
     margin-right: 30px;
 }
@@ -103,7 +104,7 @@ export const Carousel = (props) => {
 
 const next = () => {
     console.log({imgs})
-    if(imgs.indexOf(state.currentSlide) === imgs.length -1){
+    if(state.currentSlide === imgs.length -1){
         setState({...state, currentSlide: 0})
     } else {
         setState({...state, currentSlide: state.currentSlide + 1})
