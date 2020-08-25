@@ -2,79 +2,94 @@ import React, { useContext, useState, useEffect } from 'react';
 import DataContext from '../providers/DataProvider';
 import styled from 'styled-components';
 import { LanguageItem } from '../components/LanguageItem';
-import { Carousel } from './common/carousel/Carousel'
-import {BreakpointMobile, BreakpointDesktop, BreakpointLargeDevices, BreakpointTablet, BreakpointSmallMobile } from '../pages/GlobalStyle'
-import {CryptoWebApp} from '../components/webApps/CryptoCurrency'
-import {GitHubJobsApp} from '../components/webApps/GithubJobs'
-import {Q3StudentPortal} from '../components/webApps/Q3StudentPortal'
-import {Wild5App} from '../components/mobileApps/Wild5App'
-import {FindAnHerbApp} from '../components/mobileApps/FindAnHerb'
-import reactLogo from '../public/react_logo.png'
-import jsLogo from '../public/js_logo.png'
-import cssLogo from '../public/css3_logo.png'
-import gitLogo from '../public/git1_logo.png'
-import tsLogo from '../public/typescript_logo.png'
-import kotlinLogo from '../public/kotlin_logo.png'
-import mongoLogo from '../public/mongo_logo.png'
-import nodeLogo from '../public/node_logo.png'
-import githubLogo from '../public/github_logo.png'
-import firebaseLogo from '../public/firebase_logo.png'
+import { Carousel } from './common/carousel/Carousel';
+import {
+  BreakpointMobile,
+  BreakpointDesktop,
+  BreakpointLargeDevices,
+  BreakpointTablet,
+  BreakpointSmallMobile,
+} from '../pages/GlobalStyle';
+import { CryptoWebApp } from '../components/webApps/CryptoCurrency';
+import { GitHubJobsApp } from '../components/webApps/GithubJobs';
+import { Q3StudentPortal } from '../components/webApps/Q3StudentPortal';
+import { Wild5App } from '../components/mobileApps/Wild5App';
+import { FindAnHerbApp } from '../components/mobileApps/FindAnHerb';
+import reactLogo from '../public/react_logo.png';
+import jsLogo from '../public/js_logo.png';
+import cssLogo from '../public/css3_logo.png';
+import gitLogo from '../public/git1_logo.png';
+import tsLogo from '../public/typescript_logo.png';
+import kotlinLogo from '../public/kotlin_logo.png';
+import mongoLogo from '../public/mongo_logo.png';
+import nodeLogo from '../public/node_logo.png';
+import githubLogo from '../public/github_logo.png';
+import firebaseLogo from '../public/firebase_logo.png';
 const Container = styled.div`
   display: grid;
   grid-template-columns: 2fr 10fr;
   height: 80vh;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   /* border: 1px solid blue; */
 
   @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
-      height: 100vh;
-       grid-template-columns: 1fr
- }
+    height: 100vh;
+    grid-template-columns: 1fr;
+    /* overflow: scroll; */
+  border: 1px solid blue;
+  }
 `;
 
 const SideBar = styled.div`
   height: 100vh;
-  border: 2px solid ${(props) => props.theme.colors.secondary};
+  /* border: 2px solid ${(props) => props.theme.colors.secondary}; */
 
   @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
-    height: 100vh;
- }
+    height: 60vh;
+  }
 `;
 
 const StatsWrapper = styled.div`
-flex-shrink: 1;
-padding-bottom: 10px;
-/* border:1px solid red; */
-`
+  flex-shrink: 1;
+  padding-bottom: 10px;
+  /* border:1px solid red; */
+`;
 
 const SkillsWrapper = styled.div`
-display: flex;
-flex-direction: column;
-flex-shrink: 1;
-width:100%;
-justify-content: center;
-padding-bottom: 10px;
-/* border:1px solid lime; */
-`
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  width: 100%;
+  justify-content: center;
+  padding-bottom: 10px;
+  /* border:1px solid lime; */
+`;
 
 const LogoWrapper = styled.div`
-display: flex;
-flex-wrap: wrap;
-
-`
+  display: flex;
+  flex-wrap: wrap;
+  /* border:1px solid lime; */
+  @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
+    width: 80%;
+    margin: 0 auto;
+  }
+`;
 
 const StyledLogo = styled.img`
-height: 50px;
-margin: auto auto;
-padding: 2px;
-/* border:1px solid red; */
-`
+  height: 50px;
+  margin: auto auto;
+  padding: 2px;
+  /* border:1px solid red; */
+`;
 
 const HorizontalContainerWrapper = styled.div`
-display: block;
-/* grid-template-columns: 1fr; */
-/* border: 1px solid blue; */
-`
+  display: block;
+  /* grid-template-columns: 1fr; */
+  border: 1px solid red;
+  @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
+      height: 100%;
+  }
+`;
 
 const HorizontalCarousel = styled.div`
   display: grid;
@@ -82,65 +97,87 @@ const HorizontalCarousel = styled.div`
   height: 100%;
   /* border: 1px solid lime; */
   @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
-      height: 100vh;
-    grid-template-columns:1fr;
- }
+    height: 100%;
+    grid-template-columns: 1fr;
+    /* border: 1px solid green; */
+  }
 `;
 
 const CarouselWrapper = styled.div`
-height: 100%;
-padding: 10px;
-`
+  height: 100%;
+  padding: 10px;
+  @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
+      display: flex;
+    height: 60vh;
+    border: 1px solid lime;
+  }
+`;
 
 const CarouselContainer = styled.div`
-height: 100%;
-max-height: 100%;
-width: 100%;
-/* padding: 15px; */
-border: 2px solid ${props=> props.theme.colors.secondary};
+  height: 100%;
+  max-height: 100%;
+  width: 100%;
+  /* padding: 15px; */
+  /* border: 2px solid ${(props) => props.theme.colors.secondary}; */
+  /* border:1px solid red; */
+  @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
 
-`
+
+  }
+`;
 
 const TitleContainer = styled.div`
-height: 50px;
-width: 100%;
-/* border: 1px solid red; */
-`
+  height: 50px;
+  width: 100%;
+  border: 1px solid red;
+  @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
+    display: none;
+  }
+`;
 const TitleSubContainer = styled.div`
-display: inline-grid;
-height: 100%;
-width:100%;
-justify-content: center;
-grid-template-columns: 1fr 1fr;
-/* border: 1px solid lime; */
-`
+  display: inline-grid;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+  /* border: 1px solid lime; */
+`;
 
 const TitleText = styled.h1`
-font-size: 20px;
-margin: auto;
-font-family: ${(props) => props.theme.fonts.primary};
-color: ${(props) => props.theme.colors.secondary};
-/* border: 1px solid red; */
-`
+  font-size: 20px;
+  margin: auto;
+  font-family: ${(props) => props.theme.fonts.primary};
+  color: ${(props) => props.theme.colors.secondary};
+  /* border: 1px solid red; */
+  @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
+    display: inline-block;
+  }
+`;
 
-
+const WebAppsHeader = styled.div`
+  @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    /* border: 1px solid red; */
+  }
+`;
 
 const WebApps = styled.div`
   height: 50%;
   /* border: 1px solid purple; */
   @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
-    height: 100vh;
- }
+    /* height: 60vh; */
+    /* border: 1px solid purple; */
+  }
 `;
-
-
 
 const MobileApps = styled.div`
   height: 50%;
   /* border: 1px solid blue; */
   @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
-    height: 100vh;
- }
+    /* height: 100vh; */
+  }
 `;
 
 const Title = styled.div`
@@ -190,7 +227,7 @@ const MappedTime = styled.div`
 
 export const MainContainer = (props) => {
   const { wakaId, getWakaStats } = useContext(DataContext);
-  const [value, setValue] = useState(0)
+  const [value, setValue] = useState(0);
   const [state, setState] = useState({
     totalTime: '',
     languages: [],
@@ -219,15 +256,13 @@ export const MainContainer = (props) => {
         })
       : null;
 
-const onChange = (value) => {
-    setValue(value)
-}
-
+  const onChange = (value) => {
+    setValue(value);
+  };
 
   return (
     <Container>
       <SideBar>
-
         <Title>
           <div>
             <span className="main">Coding Summary</span>
@@ -241,76 +276,87 @@ const onChange = (value) => {
             </span>
           </div>
         </Title>
-          <StatsWrapper>
-        <Stats>
-          <span className="timeText">Total Time: {state.totalTime}</span>
-          <MappedTime>
-            {state.loading ? (
-              <div className="sk-circle sk-center">
-                <div className="sk-circle-dot"></div>
-                <div className="sk-circle-dot"></div>
-                <div className="sk-circle-dot"></div>
-                <div className="sk-circle-dot"></div>
-                <div className="sk-circle-dot"></div>
-                <div className="sk-circle-dot"></div>
-                <div className="sk-circle-dot"></div>
-                <div className="sk-circle-dot"></div>
-                <div className="sk-circle-dot"></div>
-                <div className="sk-circle-dot"></div>
-                <div className="sk-circle-dot"></div>
-                <div className="sk-circle-dot"></div>
-              </div>
-            ) : (
-              mappedTime
-            )}
-          </MappedTime>
-        </Stats>
-          </StatsWrapper>
-          <SkillsWrapper>
+        <StatsWrapper>
+          <Stats>
+            <span className="timeText">Total Time: {state.totalTime}</span>
+            <MappedTime>
+              {state.loading ? (
+                <div className="sk-circle sk-center">
+                  <div className="sk-circle-dot"></div>
+                  <div className="sk-circle-dot"></div>
+                  <div className="sk-circle-dot"></div>
+                  <div className="sk-circle-dot"></div>
+                  <div className="sk-circle-dot"></div>
+                  <div className="sk-circle-dot"></div>
+                  <div className="sk-circle-dot"></div>
+                  <div className="sk-circle-dot"></div>
+                  <div className="sk-circle-dot"></div>
+                  <div className="sk-circle-dot"></div>
+                  <div className="sk-circle-dot"></div>
+                  <div className="sk-circle-dot"></div>
+                </div>
+              ) : (
+                mappedTime
+              )}
+            </MappedTime>
+          </Stats>
+        </StatsWrapper>
+        <SkillsWrapper>
           <Title>
-          <div>
-            <span className="main">Skills</span>
-          </div>
-        </Title>
-        <LogoWrapper>
-        <StyledLogo src={reactLogo}/>
-        <StyledLogo src={jsLogo}/>
-        <StyledLogo src={cssLogo}/>
-        <StyledLogo src={gitLogo}/>
-        <StyledLogo src={tsLogo}/>
-        <StyledLogo src={kotlinLogo}/>
-        <StyledLogo src={mongoLogo}/>
-        <StyledLogo src={nodeLogo}/>
-        <StyledLogo src={githubLogo}/>
-        <StyledLogo src={firebaseLogo}/>
-        </LogoWrapper>
-          </SkillsWrapper>
+            <div>
+              <span className="main">Skills</span>
+            </div>
+          </Title>
+          <LogoWrapper>
+            <StyledLogo src={reactLogo} />
+            <StyledLogo src={jsLogo} />
+            <StyledLogo src={cssLogo} />
+            <StyledLogo src={gitLogo} />
+            <StyledLogo src={tsLogo} />
+            <StyledLogo src={kotlinLogo} />
+            <StyledLogo src={mongoLogo} />
+            <StyledLogo src={nodeLogo} />
+            <StyledLogo src={githubLogo} />
+            <StyledLogo src={firebaseLogo} />
+          </LogoWrapper>
+        </SkillsWrapper>
       </SideBar>
       <HorizontalContainerWrapper>
-            <TitleContainer>
-                <TitleSubContainer>
-                    <TitleText>Web Apps</TitleText>
-                    <TitleText>Mobile Apps</TitleText>
-                </TitleSubContainer>
-            </TitleContainer>
-      <HorizontalCarousel>
-        <WebApps>
+        <TitleContainer>
+          <TitleSubContainer>
+            <TitleText>Web Apps</TitleText>
+            <TitleText>Mobile Apps</TitleText>
+          </TitleSubContainer>
+        </TitleContainer>
+        <HorizontalCarousel>
+          <WebAppsHeader>
+            <TitleText>Web Apps</TitleText>
+          </WebAppsHeader>
+          <WebApps>
             <CarouselWrapper>
-            <CarouselContainer>
-              <Carousel components={[<CryptoWebApp/>, <GitHubJobsApp/>, <Q3StudentPortal/>]}/>
-            </CarouselContainer>
+              <CarouselContainer>
+                <Carousel
+                  components={[
+                    <CryptoWebApp />,
+                    <GitHubJobsApp />,
+                    <Q3StudentPortal />,
+                  ]}
+                />
+              </CarouselContainer>
             </CarouselWrapper>
-              {/* <img src={'git_logo.png'} /> */}
-                  
-        </WebApps>
-        <MobileApps>
+            {/* <img src={'git_logo.png'} /> */}
+          </WebApps>
+          <WebAppsHeader>
+            <TitleText>Mobile Apps</TitleText>
+          </WebAppsHeader>
+          <MobileApps>
             <CarouselWrapper>
-        <CarouselContainer>
-              <Carousel components={[<Wild5App />, <FindAnHerbApp />]}/>
-            </CarouselContainer>
+              <CarouselContainer>
+                <Carousel components={[<Wild5App />, <FindAnHerbApp />]} />
+              </CarouselContainer>
             </CarouselWrapper>
-        </MobileApps>
-      </HorizontalCarousel>
+          </MobileApps>
+        </HorizontalCarousel>
       </HorizontalContainerWrapper>
     </Container>
   );

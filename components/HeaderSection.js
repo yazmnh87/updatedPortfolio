@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import ReactInterval from 'react-interval';
+import {BreakpointMobile, BreakpointDesktop, BreakpointLargeDevices, BreakpointTablet, BreakpointSmallMobile } from '../pages/GlobalStyle'
+
 
 const Container = styled.div`
 display: flex;
@@ -13,7 +15,7 @@ background-color: ${props=> props.theme.colors.gray};
 .adjContainer{
     display: flex;
     height: 50%;
-    width: 50%;
+    padding:0 20px;
     background-color: ${props=> props.theme.colors.white};
     border-radius: 8px;
     justify-content:center;
@@ -22,7 +24,7 @@ background-color: ${props=> props.theme.colors.gray};
 `
 
 export const HeaderSection = props => {
-const adjs = ['Driven', 'attentive', 'organized', 'radiant', 'curious', 'insipred', 'unity', 'imperfect', 'dedicated', 'innovative', 'balanced', 'communicating','action', 'aware', 'accomplishing', 'wise', 'human', 'mindful', 'intelligent', 'reflecting', 'endurance', 'integrity', 'spirit', 'abundance', 'life force', 'questioning', 'answering', 'vibration', 'a Developer']
+const adjs = ['Driven', 'Attentive', 'Organized', 'Radiant', 'Curious', 'Insipred', 'Unity', 'Imperfect', 'Dedicated', 'Innovative', 'Balanced', 'Communicating','Action', 'Aware', 'Accomplishing', 'Wise', 'Human', 'mindful', 'intelligent', 'Reflecting', 'Endurance', 'Integrity', 'Spirit', 'Abundance', 'Life Force', 'Questioning', 'Answering', 'Vibration', 'a Developer']
 const[state, setState] = useState({
     currentIndex: 0
 })

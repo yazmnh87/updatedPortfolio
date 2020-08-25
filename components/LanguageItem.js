@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import {BreakpointMobile, BreakpointDesktop, BreakpointLargeDevices, BreakpointTablet, BreakpointSmallMobile } from '../pages/GlobalStyle'
+
 
 const Container = styled.div`
 display: flex;
@@ -13,6 +15,11 @@ width: 100%;
 img{
     margin-left: 15px;
 }
+
+ @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
+    width: 60%;
+    margin: 0 auto;
+  }
 `
 
 const TextContainer = styled.div`
