@@ -9,13 +9,13 @@ const Container = styled.div`
  */
  flex: 1;
 width:100%;
-/* border:1px solid red; */
+border:1px solid blue;
 `
 
 const Wrapper = styled.div`
 display: grid;
 grid-template-columns: 40% 60%;
-/* border:1px solid red; */
+border:1px solid red;
 `
 
 const StyledImg = styled.img`
@@ -38,7 +38,7 @@ grid-template-columns: 1fr;
 
 const DescriptionText = styled.p`
 font-size: 20px;
-/* border:1px solid red; */
+border:1px solid red;
 
 .googlePlayLink{
 text-decoration: underline;
@@ -55,7 +55,7 @@ const LogoContainer = styled.div`
 display: flex;
 height: 50px;
 width:100%;
-/* border:1px solid red; */
+border:1px solid red;
 `
 
 const StyledLogo = styled.img`

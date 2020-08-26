@@ -33,10 +33,10 @@ const Container = styled.div`
   /* border: 1px solid blue; */
 
   @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
-    height: 100vh;
+    height: 100%;
     grid-template-columns: 1fr;
     /* overflow: scroll; */
-  border: 1px solid blue;
+  /* border: 1px solid lime; */
   }
 `;
 
@@ -46,6 +46,7 @@ const SideBar = styled.div`
 
   @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
     height: 60vh;
+    /* border:1px solid blue; */
   }
 `;
 
@@ -85,16 +86,16 @@ const StyledLogo = styled.img`
 const HorizontalContainerWrapper = styled.div`
   display: block;
   /* grid-template-columns: 1fr; */
-  border: 1px solid red;
+  /* border: 1px solid red; */
   @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
-      height: 100%;
+      height: 125vh;
   }
 `;
 
 const HorizontalCarousel = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 100%;
+  height: 100vh;
   /* border: 1px solid lime; */
   @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
     height: 100%;
@@ -106,10 +107,10 @@ const HorizontalCarousel = styled.div`
 const CarouselWrapper = styled.div`
   height: 100%;
   padding: 10px;
+    /* border: 1px solid lime; */
   @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
       display: flex;
-    height: 60vh;
-    border: 1px solid lime;
+    height: 400px;
   }
 `;
 
@@ -129,7 +130,7 @@ const CarouselContainer = styled.div`
 const TitleContainer = styled.div`
   height: 50px;
   width: 100%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
     display: none;
   }
@@ -155,10 +156,12 @@ const TitleText = styled.h1`
 `;
 
 const WebAppsHeader = styled.div`
+display: none;
   @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
     display: flex;
-    height: 50px;
+    max-height: 50px;
     width: 100%;
+    border: 2px solid ${props => props.theme.colors.secondary};
     /* border: 1px solid red; */
   }
 `;
@@ -168,6 +171,7 @@ const WebApps = styled.div`
   /* border: 1px solid purple; */
   @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
     /* height: 60vh; */
+    
     /* border: 1px solid purple; */
   }
 `;
@@ -344,7 +348,6 @@ export const MainContainer = (props) => {
                 />
               </CarouselContainer>
             </CarouselWrapper>
-            {/* <img src={'git_logo.png'} /> */}
           </WebApps>
           <WebAppsHeader>
             <TitleText>Mobile Apps</TitleText>

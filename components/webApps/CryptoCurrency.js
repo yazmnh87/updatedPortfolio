@@ -3,25 +3,38 @@ import styled from 'styled-components'
 import Link from 'next/link'
 import img1 from '../../public/crypto_currency_screenshot.png'
 import reactLogo from '../../public/react_logo.png'
+import {
+    BreakpointMobile,
+    BreakpointDesktop,
+    BreakpointLargeDevices,
+    BreakpointTablet,
+    BreakpointSmallMobile,
+  } from '../../pages/GlobalStyle'
 
 const Container = styled.div`
 /* height:100%;
  */
  flex: 1;
 width:100%;
-/* border:1px solid red; */
+border:1px solid blue;
 `
 
 const Wrapper = styled.div`
 display: grid;
 grid-template-columns: 40% 60%;
 /* border:1px solid red; */
+@media only screen and (max-width: ${BreakpointMobile + 'px'}) {
+    grid-template-columns: 1fr;
+}
 `
 
 const StyledImg = styled.img`
 height: 100px;
 padding: 10px;
 /* border:1px solid red; */
+@media only screen and (max-width: ${BreakpointMobile + 'px'}) {
+    margin: 0 auto;
+}
 `
 
 const Title = styled.h2`
@@ -38,7 +51,7 @@ grid-template-columns: 1fr;
 
 const DescriptionText = styled.p`
 font-size: 20px;
-/* border:1px solid red; */
+border:1px solid red;
 
 .linkToSite{
     text-decoration:underline;
