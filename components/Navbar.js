@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons'
 import {faDownload} from '@fortawesome/free-solid-svg-icons'
+import axios from 'axios'
 import {BreakpointMobile, BreakpointDesktop, BreakpointLargeDevices, BreakpointTablet, BreakpointSmallMobile } from '../pages/GlobalStyle'
 // @media only screen and (max-width: ${BreakpointLargeDevices + 'px'}) {
 // }
@@ -108,6 +109,10 @@ border:1px solid white;
 display:none;
 }
 
+.resumeWrapper:hover{
+cursor: pointer;
+}
+
 ul{
     list-style: none;
     padding: 0;
@@ -137,6 +142,12 @@ height: 100px;
 
 export const Navbar = props => {
     const router = useRouter()
+
+const downloadFile = () => {
+    console.log("getFILErunning")
+    axios.get('/api/resumeRoute').then(res => console.log(res)).catch(err => console.log(err))
+}
+
     return(
         <NavContainer>
             <PersonalLogo src={'/1.png'}/>
@@ -146,7 +157,7 @@ export const Navbar = props => {
                 {/* <li><Link>My Photos</Link></li> */}
                 {/* <li><Link>Job History</Link></li> */}
             </ul>
-            <div className="resumeWrapper">
+            <div onClick={()=> downloadFile()} className="resumeWrapper">
                 <FontAwesomeIcon className="iconDownload" icon={faDownload}/>
                 <div className="spanWrapper">
 

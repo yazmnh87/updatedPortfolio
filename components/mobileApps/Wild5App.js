@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import wild5Login from '../../public/wild5_login_new.png'
+import wild5Landing from '../../public/wild5_landing.png'
 import reactLogo from '../../public/react_logo.png'
 import firebaseLogo from '../../public/firebase_logo.png'
 
@@ -18,10 +19,14 @@ grid-template-columns: 40% 60%;
 border:1px solid red;
 `
 
+const ImageContainer = styled.div`
+display: flex;
+`
+
 const StyledImg = styled.img`
-height: 150px;
+height: 120px;
 padding: 10px;
-/* border:1px solid red; */
+border:1px solid red;
 `
 
 const Title = styled.h2`
@@ -67,7 +72,11 @@ export const Wild5App = (props) => {
     return (
         <Container>
             <Wrapper>
+                <ImageContainer>
+
                 <StyledImg src={wild5Login}/>
+                <StyledImg src={wild5Landing}/>
+                </ImageContainer>
                 <Title>Wild5 Wellness IOS & Android App</Title>
             </Wrapper>
             <DescriptionContainer>

@@ -12,14 +12,25 @@ justify-content:center;
 align-items:center;
 background-color: ${props=> props.theme.colors.gray};
 
+
 .adjContainer{
     display: flex;
+    height: 50%;
+    /* width: 400px; */
+    padding:0 20px;
+    background-color: ${props=> props.theme.colors.white};
+    border-radius: 8px;
+    justify-content:center;
+    align-items:center;
+    @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
+        display: flex;
     height: 50%;
     padding:0 20px;
     background-color: ${props=> props.theme.colors.white};
     border-radius: 8px;
     justify-content:center;
     align-items:center;
+}
 }
 `
 
