@@ -1,6 +1,5 @@
 import React,{useRef, useEffect, useState} from 'react';
 import styled from 'styled-components';
-import img1 from '../../../public/git_logo.png'
 import ReactInterval from 'react-interval'
 
 
@@ -36,9 +35,7 @@ overflow-x: hidden;
     background-position: center;
     background-repeat: no-repeat;
 }
-/* .slide1{
-    background-image: url(${img1});
-    /* height: 100%; }*/  
+ 
 
 .slide-content{
     display: flex;
