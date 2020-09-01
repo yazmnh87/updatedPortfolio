@@ -6,6 +6,3 @@ export const BreakpointTablet = 768
 export const BreakpointLargeDevices = 922;
 export const BreakpointDesktop = 1200;
 
-const GlobalStyle = createGlobalStyle`
-  
-`
