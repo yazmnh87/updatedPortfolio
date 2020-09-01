@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {BreakpointMobile, BreakpointDesktop, BreakpointLargeDevices, BreakpointTablet, BreakpointSmallMobile } from './common/carousel/GlobalStyle'
+import {BreakpointMobile, BreakpointDesktop, BreakpointLargeDevices, BreakpointTablet, BreakpointSmallMobile } from './GlobalStyle'
 
 
 const Container = styled.div`
