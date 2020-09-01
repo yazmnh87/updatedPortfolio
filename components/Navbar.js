@@ -6,7 +6,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons'
 import {faDownload} from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios'
-import {BreakpointMobile, BreakpointDesktop, BreakpointLargeDevices, BreakpointTablet, BreakpointSmallMobile } from '../pages/GlobalStyle'
+import {BreakpointMobile, BreakpointDesktop, BreakpointLargeDevices, BreakpointTablet, BreakpointSmallMobile } from '../components/GlobalStyle'
 // @media only screen and (max-width: ${BreakpointLargeDevices + 'px'}) {
 // }
 
