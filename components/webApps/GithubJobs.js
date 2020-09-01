@@ -7,7 +7,7 @@ import {
     BreakpointLargeDevices,
     BreakpointTablet,
     BreakpointSmallMobile,
-  } from '../../pages/GlobalStyle'
+  } from '../common/carousel/GlobalStyle'
 
 const Container = styled.div`
 /* height:100%;

@@ -9,7 +9,7 @@ import {
   BreakpointLargeDevices,
   BreakpointTablet,
   BreakpointSmallMobile,
-} from '../pages/GlobalStyle';
+} from './common/carousel/GlobalStyle';
 import { CryptoWebApp } from '../components/webApps/CryptoCurrency';
 import { GitHubJobsApp } from '../components/webApps/GithubJobs';
 import { Q3StudentPortal } from '../components/webApps/Q3StudentPortal';
