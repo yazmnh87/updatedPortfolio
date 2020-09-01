@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import findAnHerbLogin from '../../public/findAnHerb_initial.png'
-import findAnHerbLanding from '../../public/findAnHerb_landing.png'
-import reactLogo from '../../public/react_logo.png'
+
 import {
     BreakpointMobile,
     BreakpointDesktop,
@@ -79,8 +77,8 @@ export const FindAnHerbApp = (props) => {
         <Container>
             <Wrapper>
                 <ImageContainer>
-                <StyledImg src={findAnHerbLogin}/>
-                <StyledImg src={findAnHerbLanding}/>
+                <StyledImg src={'findAnHerb_initial.png'}/>
+                <StyledImg src={'findAnHerb_landing.png'}/>
                 </ImageContainer>
                 <Title>Find An Herb</Title>
             </Wrapper>
@@ -88,7 +86,7 @@ export const FindAnHerbApp = (props) => {
                 <DescriptionText>FindAnHerb App is a React Native app that compliments my website <a href="https://www.findanherb.com/" target="_blank">FindAnHerb.com</a>.  FindAnHerb app is currently available on TestFlight for IOS.  Request Access to demo.</DescriptionText>
             </DescriptionContainer>
                 <LogoContainer>
-                <StyledLogo src={reactLogo}/>
+                <StyledLogo src={'react_logo.png'}/>
                 </LogoContainer>
         </Container>
     )

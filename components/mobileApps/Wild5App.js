@@ -1,9 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import wild5Login from '../../public/wild5_login_new.png'
-import wild5Landing from '../../public/wild5_landing.png'
-import reactLogo from '../../public/react_logo.png'
-import firebaseLogo from '../../public/firebase_logo.png'
+
 import {
     BreakpointMobile,
     BreakpointDesktop,
@@ -92,8 +89,8 @@ export const Wild5App = (props) => {
             <Wrapper>
                 <ImageContainer>
 
-                <StyledImg src={wild5Login}/>
-                <StyledImg src={wild5Landing}/>
+                <StyledImg src={'wild5_login_new.png'}/>
+                <StyledImg src={'wild5_landing.png'}/>
                 </ImageContainer>
                 <Title>Wild5 Wellness IOS & Android App</Title>
             </Wrapper>
@@ -102,8 +99,8 @@ export const Wild5App = (props) => {
     {" "}and also take a look at the <a href="https://www.amazon.com/WILD-Wellness-KickStart30-Proven-Program/dp/1791658806" className="googlePlayLink" target="_blank">Book</a>.
                 </DescriptionText>
                 <LogoContainer>
-                <StyledLogo src={reactLogo}/>
-                <StyledLogo src={firebaseLogo}/>
+                <StyledLogo src={'react_logo.png'}/>
+                <StyledLogo src={'firebase_logo.png'}/>
                 </LogoContainer>
             </DescriptionContainer>
         </Container>

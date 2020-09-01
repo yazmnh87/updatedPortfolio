@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import img1 from '../../public/gitHubjobs_screenshot.png'
-import reactLogo from '../../public/react_logo.png'
+
 import {
     BreakpointMobile,
     BreakpointDesktop,
@@ -64,14 +63,14 @@ export const GitHubJobsApp = props => {
         <Container>
             <Wrapper>
 
-            <StyledImg src={img1}/>
+            <StyledImg src={'gitHubjobs_screenshot.png'}/>
             <Title>GitHub Jobs</Title>
             </Wrapper>
             <DescriptionContainer>
                 <DescriptionText>Github jobs lists jobs from Github's API, I implemented pagination of results and a custom search query. Uses React, axios, and bootstrap, view site here 
 
                 </DescriptionText>
-                <StyledLogo src={reactLogo}/>
+                <StyledLogo src={'react_logo.png'}/>
             </DescriptionContainer>
         </Container>
     )

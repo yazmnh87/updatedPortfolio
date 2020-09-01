@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
-import img1 from '../../public/crypto_currency_screenshot.png'
-import reactLogo from '../../public/react_logo.png'
 import {
     BreakpointMobile,
     BreakpointDesktop,
@@ -85,7 +83,7 @@ export const CryptoWebApp = props => {
     return (
         <Container>
             <Wrapper>
-            <StyledImg src={img1}/>
+            <StyledImg src={'crypto_currency_screenshot.png'}/>
             <Title>CryptoCurrency Dashboard</Title>
             </Wrapper>
             <DescriptionContainer>
@@ -93,7 +91,7 @@ export const CryptoWebApp = props => {
 
                 </DescriptionText>
                 <LogoContainer>
-                <StyledLogo src={reactLogo}/>
+                <StyledLogo src={'react_logo.png'}/>
                 </LogoContainer>
             </DescriptionContainer>
         </Container>
