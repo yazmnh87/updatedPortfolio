@@ -25,6 +25,7 @@ import mongoLogo from '../public/mongo_logo.png';
 import nodeLogo from '../public/node_logo.png';
 import githubLogo from '../public/github_logo.png';
 import firebaseLogo from '../public/firebase_logo.png';
+import Bill from '../public/william_violette_img.jpg';
 const Container = styled.div`
   display: grid;
   grid-template-columns: 2fr 10fr;
@@ -36,7 +37,7 @@ const Container = styled.div`
     height: 100%;
     grid-template-columns: 1fr;
     /* overflow: scroll; */
-  /* border: 1px solid lime; */
+    /* border: 1px solid lime; */
   }
 `;
 
@@ -45,7 +46,7 @@ const SideBar = styled.div`
   /* border: 2px solid ${(props) => props.theme.colors.secondary}; */
 
   @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
-    height: 60vh;
+    height: 90vh;
     /* border:1px solid blue; */
   }
 `;
@@ -88,14 +89,14 @@ const HorizontalContainerWrapper = styled.div`
   /* grid-template-columns: 1fr; */
   /* border: 1px solid red; */
   @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
-      height: 125vh;
+    height: 125vh;
   }
 `;
 
 const HorizontalCarousel = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 100vh;
+  height: 50vh;
   /* border: 1px solid lime; */
   @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
     height: 100%;
@@ -113,30 +114,28 @@ const HorizontalCarousel = styled.div`
 `;
 
 const CarouselWrapper = styled.div`
-  height: 100%;
+  height: 50vh;
   padding: 10px;
   box-sizing: border-box;
-  border: 2px solid ${props=> props.theme.colors.secondary};
+  /* border:1px solid red; */
   @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
-      display: flex;
+    display: flex;
     height: 400px;
   }
   @media only screen and (max-width: ${BreakpointLargeDevices + 'px'}) {
-      display: flex;
+    display: flex;
     height: 400px;
   }
 `;
 
 const CarouselContainer = styled.div`
   height: 100%;
-  max-height: 100%;
   width: 100%;
+  border: 2px solid ${(props) => props.theme.colors.secondary};
   /* padding: 15px; */
   /* border: 2px solid ${(props) => props.theme.colors.secondary}; */
   /* border:1px solid red; */
   @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
-
-
   }
 `;
 
@@ -175,19 +174,19 @@ const TitleText = styled.h1`
 `;
 
 const WebAppsHeader = styled.div`
-display: none;
+  display: none;
   @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
     display: flex;
     max-height: 50px;
     width: 100%;
-    border: 2px solid ${props => props.theme.colors.secondary};
+    border: 2px solid ${(props) => props.theme.colors.secondary};
     /* border: 1px solid red; */
   }
   @media only screen and (max-width: ${BreakpointLargeDevices + 'px'}) {
     display: flex;
     max-height: 50px;
     width: 100%;
-    border: 2px solid ${props => props.theme.colors.secondary};
+    border: 2px solid ${(props) => props.theme.colors.secondary};
     /* border: 1px solid red; */
   }
 `;
@@ -197,7 +196,7 @@ const WebApps = styled.div`
   /* border: 1px solid purple; */
   @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
     /* height: 60vh; */
-    
+
     /* border: 1px solid purple; */
   }
 `;
@@ -256,6 +255,103 @@ const Stats = styled.div`
       text-align: center;
     }
   }
+`;
+
+const AboutContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* width:100%; */
+  /* border: 1px solid lime; */
+
+  img {
+    height: 155px;
+    width: 155px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* border: 1px solid lime; */
+  }
+
+  .imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* border: 1px solid purple; */
+  }
+
+  .contentConatiner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid blue; */
+  }
+
+  .name {
+    font-family: ${(props) => props.theme.fonts.primary};
+    font-weight: 800;
+    font-size: 2rem;
+    color: ${(props) => props.theme.colors.primary};
+  }
+
+  .title {
+    font-family: ${(props) => props.theme.fonts.primary};
+    font-weight: 500;
+    font-size: 1.4rem;
+    color: ${(props) => props.theme.colors.secondary};
+  }
+
+  .description {
+    font-family: ${(props) => props.theme.fonts.primary};
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: ${(props) => props.theme.colors.secondary};
+    /* border:1px solid blue; */
+  }
+@media only screen and (max-width: ${BreakpointMobile + 'px'}) {
+  height: 50vh;
+  .name {
+    margin:0 auto;
+  }
+  .title {
+    margin:0 auto;
+    padding:5px;
+  }
+  .description {
+    margin:0 auto;
+    text-align: center;
+    padding: 5px;
+
+  }
+}
+`;
+
+const Content = styled.div`
+  display: grid;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  grid-template-columns: 200px 400px;
+  grid-gap: 0px;
+  /* border: 1px solid red; */
+  @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
+    grid-template-columns:1fr;
+  }
+`;
+
+const AboutTitleContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  border: 2px solid ${(props) => props.theme.colors.secondary};
+  width: 100%;
+`;
+
+const AboutText = styled.span`
+  font-size: 2rem;
+  font-family: ${(props) => props.theme.fonts.primary};
+  color: ${(props) => props.theme.colors.secondary};
 `;
 
 const MappedTime = styled.div`
@@ -395,6 +491,29 @@ export const MainContainer = (props) => {
             </CarouselWrapper>
           </MobileApps>
         </HorizontalCarousel>
+        <AboutContainer>
+          <AboutTitleContainer>
+            <h1>
+              <AboutText>About</AboutText>
+            </h1>
+          </AboutTitleContainer>
+          <Content>
+            <div className="imgContainer">
+              <img src={Bill} />
+            </div>
+            <div className="contentConatiner">
+              <span className="name">William Violette</span>
+              <span className="title">FS JS Developer</span>
+              <p className="description">
+                Bill Violette is from South Jordan, UT where he works as a full
+                time freelance software developer. Outside of pursuing greatness
+                within his career as a developer Bill spends his time working as
+                a hobbyist mechanic rebuilding cars, playing golf and enjoying
+                the mountains of utah.
+              </p>
+            </div>
+          </Content>
+        </AboutContainer>
       </HorizontalContainerWrapper>
     </Container>
   );

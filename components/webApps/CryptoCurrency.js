@@ -13,6 +13,7 @@ import {
 
 const Container = styled.div`
 flex: 1;
+height:100%;
 width:100%;
 /* border:1px solid blue; */
 `
@@ -88,7 +89,7 @@ export const CryptoWebApp = props => {
             <Title>CryptoCurrency Dashboard</Title>
             </Wrapper>
             <DescriptionContainer>
-                <DescriptionText>CryptoCurrency Dashboard is a realtime dashboard with prices for Bitcoin, Ethereum, Ripple, Litecoin and EOS. Uses React and axios, view site here <a href="http://crypto-dash.surge.sh/" className="linkToSite">CryptoDashboard</a> 
+                <DescriptionText>CryptoCurrency Dashboard is a realtime dashboard with prices for Bitcoin, Ethereum, Ripple, Litecoin and EOS. Uses React and axios, view site here <a href="http://crypto-dash.surge.sh/" className="linkToSite" target="_blank">CryptoDashboard</a> 
 
                 </DescriptionText>
                 <LogoContainer>

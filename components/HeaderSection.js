@@ -7,7 +7,7 @@ import {BreakpointMobile, BreakpointDesktop, BreakpointLargeDevices, BreakpointT
 const Container = styled.div`
 display: flex;
 height: 20vh;
-width: 100%;
+/* width: 100%; */
 justify-content:center;
 align-items:center;
 background-color: ${props=> props.theme.colors.gray};
@@ -17,7 +17,7 @@ background-color: ${props=> props.theme.colors.gray};
     display: flex;
     height: 50%;
     /* width: 400px; */
-    padding:0 20rem;
+    padding:0 20px;
     background-color: ${props=> props.theme.colors.white};
     border-radius: 8px;
     justify-content:center;
@@ -25,7 +25,7 @@ background-color: ${props=> props.theme.colors.gray};
     @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
         display: flex;
     height: 50%;
-    padding:0 20rem;
+    padding:0 20px;
     background-color: ${props=> props.theme.colors.white};
     border-radius: 8px;
     justify-content:center;

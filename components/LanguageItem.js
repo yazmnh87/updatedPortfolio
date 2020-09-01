@@ -25,7 +25,7 @@ img{
       padding-top: 5px;
     height:55px;
     flex-direction: column;
-    border:1px solid red;
+    /* border:1px solid red; */
 }
 `
 
@@ -58,7 +58,7 @@ margin-right:15px;
 }
 
 @media only screen and (max-width: ${(BreakpointLargeDevices + 102) + 'px'}) {
-    border:1px solid purple;
+    /* border:1px solid purple; */
     .name{
         display: none;
     /* border:1px solid green; */
@@ -66,7 +66,7 @@ margin-right:15px;
     .time{
         width:100%;
         text-align: center;
-    border:1px solid green;
+    /* border:1px solid green; */
     }
 }
 
@@ -74,7 +74,7 @@ margin-right:15px;
     margin:0 auto;
     padding-bottom: 5px;
     width:80%;
-    border:1px solid blue;
+    /* border:1px solid blue; */
 }
 `
 
