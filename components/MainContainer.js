@@ -25,7 +25,6 @@ import mongoLogo from '../public/mongo_logo.png';
 import nodeLogo from '../public/node_logo.png';
 import githubLogo from '../public/github_logo.png';
 import firebaseLogo from '../public/firebase_logo.png';
-import Bill from '../public/william.jpg';
 const Container = styled.div`
   display: grid;
   grid-template-columns: 2fr 10fr;
@@ -499,7 +498,7 @@ export const MainContainer = (props) => {
           </AboutTitleContainer>
           <Content>
             <div className="imgContainer">
-              <img src={Bill} />
+              <img src={'./william.jpg'} />
             </div>
             <div className="contentConatiner">
               <span className="name">William Violette</span>
