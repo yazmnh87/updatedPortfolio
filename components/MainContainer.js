@@ -15,16 +15,7 @@ import { GitHubJobsApp } from '../components/webApps/GithubJobs';
 import { Q3StudentPortal } from '../components/webApps/Q3StudentPortal';
 import { Wild5App } from '../components/mobileApps/Wild5App';
 import { FindAnHerbApp } from '../components/mobileApps/FindAnHerb';
-import reactLogo from '../public/react_logo.png';
-import jsLogo from '../public/js_logo.png';
-import cssLogo from '../public/css3_logo.png';
-import gitLogo from '../public/git1_logo.png';
-import tsLogo from '../public/typescript_logo.png';
-import kotlinLogo from '../public/kotlin_logo.png';
-import mongoLogo from '../public/mongo_logo.png';
-import nodeLogo from '../public/node_logo.png';
-import githubLogo from '../public/github_logo.png';
-import firebaseLogo from '../public/firebase_logo.png';
+
 const Container = styled.div`
   display: grid;
   grid-template-columns: 2fr 10fr;
@@ -442,16 +433,16 @@ export const MainContainer = (props) => {
             </div>
           </Title>
           <LogoWrapper>
-            <StyledLogo src={reactLogo} />
-            <StyledLogo src={jsLogo} />
-            <StyledLogo src={cssLogo} />
-            <StyledLogo src={gitLogo} />
-            <StyledLogo src={tsLogo} />
-            <StyledLogo src={kotlinLogo} />
-            <StyledLogo src={mongoLogo} />
-            <StyledLogo src={nodeLogo} />
-            <StyledLogo src={githubLogo} />
-            <StyledLogo src={firebaseLogo} />
+            <StyledLogo src={'./react_logo.png'} />
+            <StyledLogo src={'./js_logo.png'} />
+            <StyledLogo src={'./css3_logo.png'} />
+            <StyledLogo src={'./git1_logo.png'} />
+            <StyledLogo src={'./typescript_logo.png'} />
+            <StyledLogo src={'./kotlin_logo.png'} />
+            <StyledLogo src={'./mongo_logo.png'} />
+            <StyledLogo src={'./node_logo.png'} />
+            <StyledLogo src={'./github_logo.png'} />
+            <StyledLogo src={'./firebase_logo.png'} />
           </LogoWrapper>
         </SkillsWrapper>
       </SideBar>
