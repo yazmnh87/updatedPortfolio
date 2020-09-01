@@ -17,7 +17,7 @@ background-color: ${props=> props.theme.colors.gray};
     display: flex;
     height: 50%;
     /* width: 400px; */
-    padding:0 20px;
+    padding:0 20rem;
     background-color: ${props=> props.theme.colors.white};
     border-radius: 8px;
     justify-content:center;
@@ -25,12 +25,17 @@ background-color: ${props=> props.theme.colors.gray};
     @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
         display: flex;
     height: 50%;
-    padding:0 20px;
+    padding:0 20rem;
     background-color: ${props=> props.theme.colors.white};
     border-radius: 8px;
     justify-content:center;
     align-items:center;
+
+    
 }
+.description-text{
+        font-size: 3rem;
+    }
 }
 `
 
@@ -54,7 +59,7 @@ const updateAdj = () => {
     return(
         <Container>
             <div className="adjContainer">
-                <h1>I am {adjs[state.currentIndex]}</h1>
+                <h1 class="description-text">I am {adjs[state.currentIndex]}</h1>
                 <ReactInterval timeout={5000} enabled={true}
                     callback={() => updateAdj()} />
             </div>

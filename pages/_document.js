@@ -28,9 +28,10 @@ static async getInitialProps(ctx){
 
 render(props){
     return (
-        <Html>
+        <Html style={{fontSize:'62.5%'}}>
             <Head>
                 <link rel="stylesheet" href="spinkit.min.css"/>
+                <link rel="shortcut icon" type="image/png" href="2.jpg" />
             </Head>
             <body style={{margin: 0}}>
                 <Main />

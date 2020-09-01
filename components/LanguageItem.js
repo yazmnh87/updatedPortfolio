@@ -20,9 +20,17 @@ img{
     width: 60%;
     margin: 0 auto;
   }
+
+  @media only screen and (max-width: ${BreakpointDesktop + 'px'}) {
+      padding-top: 5px;
+    height:55px;
+    flex-direction: column;
+    border:1px solid red;
+}
 `
 
 const TextContainer = styled.div`
+position: relative;
 display: flex;
 height: 100%;
 width: 65%;
@@ -30,18 +38,60 @@ align-items: center;
 justify-content: space-evenly;
 margin-right:15px;
 /* border: 1px solid blue; */
+
+.name{
+    position: absolute;
+        /* top: 40%; */
+        left: 0;
+        /* transform: translate(-50%, -50%); */
+        text-align: center;
+    /* border:1px solid red; */
+}
+
+.time{
+    position: absolute;
+        /* top: 40%; */
+        right: 0;
+        /* transform: translate(-50%, -50%); */
+        text-align: center;
+    /* border:1px solid red; */
+}
+
+@media only screen and (max-width: ${(BreakpointLargeDevices + 102) + 'px'}) {
+    border:1px solid purple;
+    .name{
+        display: none;
+    /* border:1px solid green; */
+    }
+    .time{
+        width:100%;
+        text-align: center;
+    border:1px solid green;
+    }
+}
+
+@media only screen and (max-width: ${BreakpointDesktop + 'px'}) {
+    margin:0 auto;
+    padding-bottom: 5px;
+    width:80%;
+    border:1px solid blue;
+}
 `
 
 const StyledName = styled.span`
+text-align: left;
 font-Size: ${props=> props.stringLen <= 12 ? 14 + 'px' : 12 + 'px'};
 font-family: ${props=> props.theme.fonts.primary};
 color: ${props=> props.theme.colors.secondary};
+/* border:1px solid red; */
 `
 
 const StyledTime = styled.span`
-font-Size: ${props=> props.stringLen <= 12 ? 14 + 'px' : 12 + 'px'};
+padding: 0 2px;
+font-Size: ${props=> props.stringLen && !props.screenWidth < 1200 <= 12 ? 14 + 'px' : 12 + 'px'};
 font-family: ${props=> props.theme.fonts.primary};
 color: ${props=> props.theme.colors.secondary};
+/* border: 1px solid red; */
 `
 
 
@@ -67,21 +117,27 @@ const renderLogo = language => {
             return <img height={30} width={30} src={'kotlin_logo.png'}/>
         case 'CSS':
             return <img height={30} width={30} src={'css3_logo.png'}/>
+        case 'SCSS':
+            return <img height={30} width={30} src={'sass_logo.png'}/>
+        case 'HTML':
+            return <img height={30} width={30} src={'html5_logo.png'}/>
         }
 }
 
 
 export const LanguageItem = ({language}) => {
-    console.log( "length",language.name.length + String(language.hours).length + String(language.minutes).length)
+    console.log( "length",language.name)
     const stringLen = language.name.length + String(language.hours).length + String(language.minutes).length
     return (
             <Container>
                 {renderLogo(language.name)}
                 <TextContainer>
-                <StyledName stringLen={stringLen}>{language.name}</StyledName>
+                <h1 className="name"><StyledName screenWidth={screen} stringLen={stringLen}>{language.name}</StyledName></h1>
+                <h1 className="time">
                 {language.hours !== 0 ?
                 <StyledTime stringLen={stringLen}>{language.hours}{" "}hr</StyledTime> : null}
                 <StyledTime stringLen={stringLen}>{language.minutes}{" "}mins</StyledTime>
+                </h1>
                 </TextContainer>
             </Container>
     )

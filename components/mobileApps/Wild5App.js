@@ -30,10 +30,10 @@ border:1px solid red;
 `
 
 const Title = styled.h2`
-font-size: 22px;
+font-size: 2.2rem;
 width:100%;
 color: ${props=> props.theme.colors.primary};
-/* border:1px solid red; */
+border:1px solid red;
 `
 
 const DescriptionContainer = styled.div`
@@ -42,7 +42,7 @@ grid-template-columns: 1fr;
 `
 
 const DescriptionText = styled.p`
-font-size: 20px;
+font-size: 1.8rem;
 border:1px solid red;
 
 .googlePlayLink{
@@ -58,14 +58,17 @@ color: ${props=> props.theme.colors.secondary};
 
 const LogoContainer = styled.div`
 display: flex;
+position: absolute;
+bottom: 0;
 height: 50px;
 width:100%;
-border:1px solid red;
+/* border:1px solid red; */
 `
 
 const StyledLogo = styled.img`
 /* position:absolute; */
 height: 50px;
+padding-bottom: 5px;
 `
 
 export const Wild5App = (props) => {

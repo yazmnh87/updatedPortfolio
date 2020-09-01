@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import wild5Login from '../../public/wild5_login_new.png'
+import findAnHerbLogin from '../../public/findAnHerb_initial.png'
 import reactLogo from '../../public/react_logo.png'
 
 const Container = styled.div`
@@ -50,13 +50,11 @@ export const FindAnHerbApp = (props) => {
     return (
         <Container>
             <Wrapper>
-                <StyledImg src={wild5Login}/>
+                <StyledImg src={findAnHerbLogin}/>
                 <Title>Find An Herb</Title>
             </Wrapper>
             <DescriptionContainer>
-                <DescriptionText>CryptoCurrency Dashboard is a realtime dashboard with prices for Bitcoin, Ethereum, Ripple, Litecoin and EOS. Uses React and axios, view site here 
-
-                </DescriptionText>
+                <DescriptionText>FindAnHerb App is a React Native app that compliments my website FindAnHerb.com.  FindAnHerb app is currently available on TestFlight for IOS.  Request Access to demo.</DescriptionText>
                 <StyledLogo src={reactLogo}/>
             </DescriptionContainer>
         </Container>

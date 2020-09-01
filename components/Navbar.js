@@ -157,13 +157,13 @@ const downloadFile = () => {
                 {/* <li><Link>My Photos</Link></li> */}
                 {/* <li><Link>Job History</Link></li> */}
             </ul>
-            <div onClick={()=> downloadFile()} className="resumeWrapper">
+            {/* <div onClick={()=> downloadFile()} className="resumeWrapper">
                 <FontAwesomeIcon className="iconDownload" icon={faDownload}/>
                 <div className="spanWrapper">
 
                 <span className="downloadText">Download Resume</span>
                 </div>
-            </div>
+            </div> */}
             <div className="workLinks">
             <a href="https://github.com/yazmnh87"><FontAwesomeIcon className="icon" icon={faGithub}/></a>
                 <a href="https://www.linkedin.com/in/william-violette-6b478724/"><FontAwesomeIcon className="icon" icon={faLinkedin}/></a>

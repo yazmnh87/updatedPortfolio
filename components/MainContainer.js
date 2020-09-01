@@ -102,13 +102,26 @@ const HorizontalCarousel = styled.div`
     grid-template-columns: 1fr;
     /* border: 1px solid green; */
   }
+  @media only screen and (max-width: ${BreakpointTablet + 'px'}) {
+    height: 100%;
+    grid-template-columns: 1fr;
+  }
+  @media only screen and (max-width: ${BreakpointLargeDevices + 'px'}) {
+    height: 100%;
+    grid-template-columns: 1fr;
+  }
 `;
 
 const CarouselWrapper = styled.div`
   height: 100%;
   padding: 10px;
-    /* border: 1px solid lime; */
+  box-sizing: border-box;
+  border: 2px solid ${props=> props.theme.colors.secondary};
   @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
+      display: flex;
+    height: 400px;
+  }
+  @media only screen and (max-width: ${BreakpointLargeDevices + 'px'}) {
       display: flex;
     height: 400px;
   }
@@ -134,6 +147,9 @@ const TitleContainer = styled.div`
   @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
     display: none;
   }
+  @media only screen and (max-width: ${BreakpointLargeDevices + 'px'}) {
+    display: none;
+  }
 `;
 const TitleSubContainer = styled.div`
   display: inline-grid;
@@ -145,7 +161,7 @@ const TitleSubContainer = styled.div`
 `;
 
 const TitleText = styled.h1`
-  font-size: 20px;
+  font-size: 2rem;
   margin: auto;
   font-family: ${(props) => props.theme.fonts.primary};
   color: ${(props) => props.theme.colors.secondary};
@@ -153,11 +169,21 @@ const TitleText = styled.h1`
   @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
     display: inline-block;
   }
+  @media only screen and (max-width: ${BreakpointLargeDevices + 'px'}) {
+    display: inline-block;
+  }
 `;
 
 const WebAppsHeader = styled.div`
 display: none;
   @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
+    display: flex;
+    max-height: 50px;
+    width: 100%;
+    border: 2px solid ${props => props.theme.colors.secondary};
+    /* border: 1px solid red; */
+  }
+  @media only screen and (max-width: ${BreakpointLargeDevices + 'px'}) {
     display: flex;
     max-height: 50px;
     width: 100%;
@@ -193,14 +219,14 @@ const Title = styled.div`
 
   .main {
     font-family: ${(props) => props.theme.fonts.primary};
-    font-size: 20px;
+    font-size: 1.4rem;
     color: ${(props) => props.theme.colors.primary};
     font-weight: 700;
   }
 
   .sub {
     font-family: ${(props) => props.theme.fonts.primary};
-    font-size: 16px;
+    font-size: 1.6rem;
     color: ${(props) => props.theme.colors.secondary};
   }
 
@@ -208,6 +234,10 @@ const Title = styled.div`
     font-family: ${(props) => props.theme.fonts.primary};
     font-size: 11px;
     color: ${(props) => props.theme.colors.primary};
+  }
+  @media only screen and (max-width: ${BreakpointDesktop + 'px'}) {
+    font-size: 1rem;
+    text-align: center;
   }
 `;
 const Stats = styled.div`
@@ -220,6 +250,11 @@ const Stats = styled.div`
     color: ${(props) => props.theme.colors.secondary};
     font-weight: 600;
     margin: auto;
+  }
+  @media only screen and (max-width: ${BreakpointDesktop + 'px'}) {
+    .timeText {
+      text-align: center;
+    }
   }
 `;
 
