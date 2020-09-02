@@ -369,7 +369,7 @@ export const MainContainer = (props) => {
     let subscribed;
     subscribed = true;
     if(process.browser && subscribed){
-      loadData();
+      // loadData();
     }
     return () => subscribed = false;
    
