@@ -358,7 +358,7 @@ const MappedTime = styled.div`
   }
 `;
 export const MainContainer = (props) => {
-  // const client = new WakaTimeClient(process.env.wakaTimeClient);
+  const client = new WakaTimeClient(0b2b4c46-69d4-4edb-b6f8-f4995b8f9e96);
   const [value, setValue] = useState(0);
   const [state, setState] = useState({
     totalTime: '',
@@ -369,7 +369,7 @@ export const MainContainer = (props) => {
     let subscribed;
     subscribed = true;
     if(process.browser && subscribed){
-      // loadData();
+      loadData();
     }
     return () => subscribed = false;
    
