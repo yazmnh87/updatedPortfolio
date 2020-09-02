@@ -351,29 +351,29 @@ const MappedTime = styled.div`
 `;
 
 export const MainContainer = (props) => {
-  // const { wakaId, getWakaStats } = useContext(DataContext);
+  const { wakaId, getWakaStats } = useContext(DataContext);
   const [value, setValue] = useState(0);
   const [state, setState] = useState({
     totalTime: '',
     languages: [],
     loading: false,
   });
-  //useEffect(() => {
-    // loadData();
- // }, [wakaId]);
-  // const loadData = async () => {
-  //   setState((prevState) => ({ ...prevState, loading: true }));
-  //   const data = await getWakaStats(wakaId);
-  //   if (data.data) {
-  //     console.log('what is this', data.data.languages);
-  //     setState((prevState) => ({
-  //       ...prevState,
-  //       totalTime: data.data.human_readable_total_including_other_language,
-  //       languages: [...state.languages, ...data.data.languages],
-  //       loading: false,
-  //     }));
-  //   }
-  // };
+  useEffect(() => {
+    loadData();
+ }, [wakaId]);
+  const loadData = async () => {
+    setState((prevState) => ({ ...prevState, loading: true }));
+    const data = await getWakaStats(wakaId);
+    if (data.data) {
+      console.log('what is this', data.data.languages);
+      setState((prevState) => ({
+        ...prevState,
+        totalTime: data.data.human_readable_total_including_other_language,
+        languages: [...state.languages, ...data.data.languages],
+        loading: false,
+      }));
+    }
+  };
   const mappedTime =
     state.languages.length !== 0
       ? state.languages.map((language, i) => {

@@ -5,9 +5,11 @@ import {DataProvider} from '../providers/DataProvider'
 
  function MyApp({Component, pageProps}){
     return (
+        <DataProvider>
         <Theme>
             <Component {...pageProps}/>
         </Theme>
+        </DataProvider>
         
     )
 }
