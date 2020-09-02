@@ -349,9 +349,8 @@ const MappedTime = styled.div`
   flex-direction: column;
   margin: 10px 0 0 0;
 `;
-const client = new WakaTimeClient(process.env.wakaTimeClient)
 export const MainContainer = (props) => {
-  // const { wakaId, getWakaStats } = useContext(DataContext);
+  const client = new WakaTimeClient(process.env.wakaTimeClient)
   const [value, setValue] = useState(0);
   const [state, setState] = useState({
     totalTime: '',
@@ -359,8 +358,13 @@ export const MainContainer = (props) => {
     loading: false,
   });
   useEffect(() => {
-    loadData();
-    console.log("APPprops",{props})
+    let subscribed;
+    subscribed = true;
+    if(subscribed){
+      loadData();
+    }
+    return () => subscribed = false;
+   
  }, []);
   const loadData = async () => {
     setState((prevState) => ({ ...prevState, loading: true }));
