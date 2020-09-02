@@ -358,7 +358,7 @@ const MappedTime = styled.div`
   }
 `;
 export const MainContainer = (props) => {
-  const client = new WakaTimeClient(process.env.wakaTimeClient);
+  // const client = new WakaTimeClient(process.env.wakaTimeClient);
   const [value, setValue] = useState(0);
   const [state, setState] = useState({
     totalTime: '',
