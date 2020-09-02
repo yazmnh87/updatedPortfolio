@@ -4,10 +4,10 @@ import {DataProvider} from '../providers/DataProvider'
 
 export default function({Component, pageProps}){
     return (
-        <DataProvider>
+        // <DataProvider>
         <Theme>
             <Component {...pageProps}/>
         </Theme>
-        </DataProvider>
+        // </DataProvider>
     )
 }
