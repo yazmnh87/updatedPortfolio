@@ -348,9 +348,17 @@ const MappedTime = styled.div`
   display: flex;
   flex-direction: column;
   margin: 10px 0 0 0;
+
+  .no_stats{
+    font-size: 2rem;
+    margin:0 auto;
+  font-family: ${(props) => props.theme.fonts.primary};
+  color: ${(props) => props.theme.colors.secondary};
+
+  }
 `;
 export const MainContainer = (props) => {
-  const client = new WakaTimeClient(process.env.wakaTimeClient)
+  const client = new WakaTimeClient(process.env.wakaTimeClient);
   const [value, setValue] = useState(0);
   const [state, setState] = useState({
     totalTime: '',
@@ -360,7 +368,7 @@ export const MainContainer = (props) => {
   useEffect(() => {
     let subscribed;
     subscribed = true;
-    if(subscribed){
+    if(process.browser && subscribed){
       loadData();
     }
     return () => subscribed = false;
@@ -432,9 +440,12 @@ export const MainContainer = (props) => {
                   <div className="sk-circle-dot"></div>
                   <div className="sk-circle-dot"></div>
                 </div>
-              ) : (
+              ) : state.languages.length !== 0 ? (
                 mappedTime
-              )}
+              ) : (
+                <span className="no_stats">NO STATS AVAILABLE</span>
+              )
+              }
             </MappedTime>
           </Stats>
         </StatsWrapper>
