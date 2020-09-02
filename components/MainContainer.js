@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import DataContext from '../providers/DataProvider';
+import { WakaTimeClient, RANGE } from 'wakatime-client';
 import styled from 'styled-components';
 import { LanguageItem } from '../components/LanguageItem';
 import { Carousel } from './common/carousel/Carousel';
@@ -349,9 +349,9 @@ const MappedTime = styled.div`
   flex-direction: column;
   margin: 10px 0 0 0;
 `;
-
+const client = new WakaTimeClient(process.env.wakaTimeClient)
 export const MainContainer = (props) => {
-  const { wakaId, getWakaStats } = useContext(DataContext);
+  // const { wakaId, getWakaStats } = useContext(DataContext);
   const [value, setValue] = useState(0);
   const [state, setState] = useState({
     totalTime: '',
@@ -360,19 +360,27 @@ export const MainContainer = (props) => {
   });
   useEffect(() => {
     loadData();
- }, [wakaId]);
+    console.log("APPprops",{props})
+ }, []);
   const loadData = async () => {
     setState((prevState) => ({ ...prevState, loading: true }));
-    const data = await getWakaStats(wakaId);
-    if (data.data) {
-      console.log('what is this', data.data.languages);
-      setState((prevState) => ({
-        ...prevState,
-        totalTime: data.data.human_readable_total_including_other_language,
-        languages: [...state.languages, ...data.data.languages],
-        loading: false,
-      }));
-    }
+    const myUserDetails = await client.getMe();
+     if(myUserDetails){
+         console.log("IMPORTANT", myUserDetails)
+         const stats = await client.getUserStats({
+             userId: myUserDetails.data.id,
+             range: RANGE.LAST_7_DAYS
+            });
+            if(stats){
+              console.log("IMPORTANT",{stats})
+              setState((prevState) => ({
+                ...prevState,
+                totalTime: stats.data.human_readable_total_including_other_language,
+                languages: [...state.languages, ...stats.data.languages],
+                loading: false,
+              }));
+            }
+          }
   };
   const mappedTime =
     state.languages.length !== 0

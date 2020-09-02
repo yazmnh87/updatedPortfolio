@@ -1,23 +1,4 @@
-import React from 'react'
-import styled from 'styled-components'
-import {Navbar} from '../components/Navbar'
-import {HeaderSection} from '../components/HeaderSection'
-import {MainContainer} from '../components/MainContainer'
-
-
-const Index = (props) => {
-    console.log("propsINDX",{props})
-    return(
-        <>
-        <Navbar />
-        <HeaderSection />
-        <MainContainer />
-        </>
-    )
-}
-
-export default Index;
-
+import { WakaTimeClient, RANGE } from 'wakatime-client';
 export async function getStaticProps(context) {
     const client = new WakaTimeClient(process.env.wakaTimeClient)
     const myUserDetails = await client.getMe();
