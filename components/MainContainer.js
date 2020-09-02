@@ -39,6 +39,11 @@ const SideBar = styled.div`
     height: 90vh;
     /* border:1px solid blue; */
   }
+  /* @media only screen and (max-width: ${BreakpointTablet + 'px'}) {
+    height: 110vh;
+    /* border:1px solid blue; 
+  }
+    */
 `;
 
 const StatsWrapper = styled.div`
@@ -112,6 +117,12 @@ const CarouselWrapper = styled.div`
     display: flex;
     height: 400px;
   }
+
+  /* @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
+    display: flex;
+    height: 400px;
+  } */
+
   @media only screen and (max-width: ${BreakpointLargeDevices + 'px'}) {
     display: flex;
     height: 400px;

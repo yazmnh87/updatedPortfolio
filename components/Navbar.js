@@ -129,7 +129,7 @@ padding: 5px;
 }
 
 .workLinks{
-    border:1px solid red;
+    /* border:1px solid red; */
 }
 
 }
