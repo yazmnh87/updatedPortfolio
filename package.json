@@ -7,9 +7,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "heroku-postbuild":" next build",
+    "start": "next",
+    "server": "next start",
+    "test": "NODE_ENV=test jest"
   },
   "author": "",
   "license": "ISC",
