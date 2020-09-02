@@ -7,7 +7,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "heroku-postbuild":" next build",
+    "heroku-postbuild": "next build",
     "start": "next",
     "server": "next start",
     "test": "NODE_ENV=test jest"
