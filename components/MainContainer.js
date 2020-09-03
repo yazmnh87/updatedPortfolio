@@ -15,6 +15,7 @@ import { GitHubJobsApp } from '../components/webApps/GithubJobs';
 import { Q3StudentPortal } from '../components/webApps/Q3StudentPortal';
 import { Wild5App } from '../components/mobileApps/Wild5App';
 import { FindAnHerbApp } from '../components/mobileApps/FindAnHerb';
+import {FrequenciApp} from '../components/mobileApps/FrequenciApp'
 
 const Container = styled.div`
   display: grid;
@@ -510,7 +511,7 @@ export const MainContainer = (props) => {
           <MobileApps>
             <CarouselWrapper>
               <CarouselContainer>
-                <Carousel components={[<Wild5App />, <FindAnHerbApp />]} />
+                <Carousel components={[<Wild5App />, <FindAnHerbApp />,<FrequenciApp/>]} />
               </CarouselContainer>
             </CarouselWrapper>
           </MobileApps>

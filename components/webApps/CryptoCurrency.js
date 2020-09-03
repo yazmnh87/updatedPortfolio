@@ -75,6 +75,7 @@ const StyledLogo = styled.img`
 bottom:0;
 left: 20px;
 height: 50px;
+padding-left: 5px;
 padding-bottom: 5px;
 /* border:1px solid purple; */
 `

@@ -13,13 +13,13 @@ const Container = styled.div`
  */
  flex: 1;
 width:100%;
-/* border:1px solid blue; */
+/* border:1px solid red; */
 `
 
 const Wrapper = styled.div`
 display: grid;
 grid-template-columns: 40% 60%;
-/* border:1px solid red; */
+/* border:1px solid blue; */
 @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
     grid-template-columns: 1fr;
 }
@@ -30,7 +30,7 @@ display: flex;
 `
 
 const StyledImg = styled.img`
-height: 120px;
+height: 150px;
 padding: 10px;
 /* border:1px solid red; */
 @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
@@ -39,71 +39,58 @@ padding: 10px;
 `
 
 const Title = styled.h2`
-font-size: 2.2rem;
+font-size: 22px;
 width:100%;
-color: ${props=> props.theme.colors.primary};
 /* border:1px solid red; */
 `
 
 const DescriptionContainer = styled.div`
 display: grid;
 grid-template-columns: 1fr;
-/* border:1px solid red; */
+/* border:1px solid lime; */
 `
 
 const DescriptionText = styled.p`
-font-size: 1.8rem;
-/* border:1px solid red; */
-.googlePlayLink{
-text-decoration: underline;
-color: ${props=> props.theme.colors.secondary}; 
-}
-
-.googlePlayLink:hover{
-    cursor: pointer;
-}
+font-size: 2rem;
+/* border:1px solid purple; */
 @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
     font-size: 1.4rem;
 }
-
 `
 
 const LogoContainer = styled.div`
-display: flex;
 position: absolute;
 bottom: 0;
-height: 50px;
+display: flex;
 width:100%;
-/* border:1px solid red; */
+/* border:1px solid purple; */
 `
 
 const StyledLogo = styled.img`
-/* position:absolute; */
-height: 5rem;
+bottom:0;
+left: 20px;
+height: 50px;
 padding-left: 5px;
 padding-bottom: 5px;
 `
 
-export const Wild5App = (props) => {
+export const FrequenciApp = (props) => {
     return (
         <Container>
             <Wrapper>
                 <ImageContainer>
-
-                <StyledImg src={'wild5_login_new.png'}/>
-                <StyledImg src={'wild5_landing.png'}/>
+                <StyledImg src={'frequenci_app.png'}/>
+                <StyledImg src={'frequenci_landing.png'}/>
                 </ImageContainer>
-                <Title>Wild5 Wellness IOS & Android App</Title>
+                <Title>Frequenci</Title>
             </Wrapper>
             <DescriptionContainer>
-                <DescriptionText>Wild 5 Wellness Kickstart 30 app is a full stack React Native app available on both IOS and android. The app is a compliment tool to the book to assist readers to be able to track their progress more easily. Check out the <a href="https://play.google.com/store/apps/details?id=com.wild5wellness.kickstart30" className="googlePlayLink" target="_blank">App</a>
-    {" "}and also take a look at the <a href="https://www.amazon.com/WILD-Wellness-KickStart30-Proven-Program/dp/1791658806" className="googlePlayLink" target="_blank">Book</a>.
-                </DescriptionText>
+                <DescriptionText>Frequenci is a tracking tool to help you achieve better overall wellness.  Frequenci app is currently available on TestFlight for IOS.  Request Access to demo.</DescriptionText>
+            </DescriptionContainer>
                 <LogoContainer>
                 <StyledLogo src={'react_logo.png'}/>
-                <StyledLogo src={'firebase_logo.png'}/>
+                <StyledLogo src={'node_logo.png'}/>
                 </LogoContainer>
-            </DescriptionContainer>
         </Container>
     )
 }

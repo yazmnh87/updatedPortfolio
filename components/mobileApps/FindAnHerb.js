@@ -70,6 +70,8 @@ const StyledLogo = styled.img`
 bottom:0;
 left: 20px;
 height: 50px;
+padding-left: 5px;
+padding-bottom: 5px;
 `
 
 export const FindAnHerbApp = (props) => {
@@ -87,6 +89,7 @@ export const FindAnHerbApp = (props) => {
             </DescriptionContainer>
                 <LogoContainer>
                 <StyledLogo src={'react_logo.png'}/>
+                <StyledLogo src={'node_logo.png'}/>
                 </LogoContainer>
         </Container>
     )

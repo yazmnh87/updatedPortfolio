@@ -14,13 +14,13 @@ const Container = styled.div`
  */
  flex: 1;
 width:100%;
-border:1px solid red;
+/* border:1px solid red; */
 `
 
 const Wrapper = styled.div`
 display: grid;
 grid-template-columns: 40% 60%;
-border:1px solid red;
+/* border:1px solid red; */
 @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
     grid-template-columns: 1fr;
 }
@@ -29,7 +29,7 @@ border:1px solid red;
 const StyledImg = styled.img`
 height: 100px;
 padding: 10px;
-border:1px solid red;
+/* border:1px solid red; */
 @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
     margin: 0 auto;
 }
@@ -38,7 +38,7 @@ border:1px solid red;
 const Title = styled.h2`
 font-size: 22px;
 width:100%;
-border:1px solid red;
+/* border:1px solid red; */
 `
 
 const DescriptionContainer = styled.div`
@@ -48,7 +48,7 @@ grid-template-columns: 1fr;
 
 const DescriptionText = styled.p`
 font-size: 20px;
-border:1px solid red;
+/* border:1px solid red; */
 `
 
 const StyledLogo = styled.img`
