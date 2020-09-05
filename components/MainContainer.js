@@ -262,8 +262,9 @@ const Stats = styled.div`
 const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  /* width:100%; */
+  margin: 0 auto;
+  /* align-items: center; */
+  width:98.5%;
   /* border: 1px solid lime; */
 
   img {
@@ -271,6 +272,7 @@ const AboutContainer = styled.div`
     width: 155px;
     border-radius: 50%;
     object-fit: cover;
+    padding: 5px;
     /* border: 1px solid lime; */
   }
 
@@ -296,6 +298,8 @@ const AboutContainer = styled.div`
     font-weight: 800;
     font-size: 2rem;
     color: ${(props) => props.theme.colors.primary};
+    padding:5px;
+    /* border: 1px solid blue; */
   }
 
   .title {
@@ -303,6 +307,7 @@ const AboutContainer = styled.div`
     font-weight: 500;
     font-size: 1.4rem;
     color: ${(props) => props.theme.colors.secondary};
+    padding:5px;
   }
 
   .description {
@@ -310,6 +315,7 @@ const AboutContainer = styled.div`
     font-weight: 700;
     font-size: 1.5rem;
     color: ${(props) => props.theme.colors.secondary};
+    padding:5px;
     /* border:1px solid blue; */
   }
 @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
@@ -331,16 +337,12 @@ const AboutContainer = styled.div`
 `;
 
 const Content = styled.div`
-  display: grid;
+  display: flex;
   height: 100%;
   width: 100%;
-  align-items: center;
-  grid-template-columns: 200px 400px;
-  grid-gap: 0px;
   /* border: 1px solid red; */
-  @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
-    grid-template-columns:1fr;
-  }
+  /* @media only screen and (max-width: ${BreakpointMobile + 'px'}) {
+  } */
 `;
 
 const AboutTitleContainer = styled.div`
@@ -478,6 +480,7 @@ export const MainContainer = (props) => {
             <StyledLogo src={'./node_logo.png'} />
             <StyledLogo src={'./github_logo.png'} />
             <StyledLogo src={'./firebase_logo.png'} />
+            <StyledLogo src={'./sass_logo.png'} />
           </LogoWrapper>
         </SkillsWrapper>
       </SideBar>
