@@ -16,7 +16,7 @@ import { Q3StudentPortal } from '../components/webApps/Q3StudentPortal';
 import { Wild5App } from '../components/mobileApps/Wild5App';
 import { FindAnHerbApp } from '../components/mobileApps/FindAnHerb';
 import {FrequenciApp} from '../components/mobileApps/FrequenciApp'
-
+import {FindAnHerbWebApp} from '../components/webApps/FindAnHerb'
 const Container = styled.div`
   display: grid;
   grid-template-columns: 2fr 10fr;
@@ -503,6 +503,7 @@ export const MainContainer = (props) => {
                     <CryptoWebApp />,
                     <GitHubJobsApp />,
                     <Q3StudentPortal />,
+                    <FindAnHerbWebApp />
                   ]}
                 />
               </CarouselContainer>
