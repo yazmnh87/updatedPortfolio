@@ -67,8 +67,7 @@ export const GitHubJobsApp = props => {
             <Title>GitHub Jobs</Title>
             </Wrapper>
             <DescriptionContainer>
-                <DescriptionText>Github jobs lists jobs from Github's API, I implemented pagination of results and a custom search query. Uses React, axios, and bootstrap, view site here 
-
+                <DescriptionText>Github jobs lists jobs from Github's API, I implemented pagination of results and a custom search query. Uses React, axios, and bootstrap, view site here <a href="http://github-jobsapi.surge.sh/#/" className="linkToSite" target="_blank">GitHubJobs.com</a>
                 </DescriptionText>
                 <StyledLogo src={'react_logo.png'}/>
             </DescriptionContainer>
